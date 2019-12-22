@@ -10,5 +10,5 @@ class List(models.Model):
     def addList(self):
         self.save()
 
-    def _str_(self):
+    def __str__(self):
         return self.title
