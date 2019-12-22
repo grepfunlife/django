@@ -25,7 +25,7 @@ SECRET_KEY = '_&6)+%y2y+ly^_t-pcyc6f1-w^s93370$5#0fzbyy1j-bkaykc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'grepfunlife1.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
