@@ -1,30 +1,9 @@
-{% load static %}
-<html lang="ru">
-    <head>
-        <title>Kaiya</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/words.css' %}">
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <div class = "page-header">
-            <h1><a href="/">A wonderful world of english words</a></h1>
-        </div>
+{% extends 'words/base.html' %}
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for list in lists %}
-                    <div class="list">
-                        <h1><a href="">{{ list.title }}</a></h1>
-                        <p>{{ list.text|linebreaksbr }}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+{% block content %}
+    {% for list in lists %}
+        <div class="list">
+            <h1><a href="{% url 'list_detail' pk=list.pk %}">{{ list.title }} {{ list.done|yesno }}</a></h1>
         </div>
-
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}

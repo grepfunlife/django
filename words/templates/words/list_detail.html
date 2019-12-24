@@ -1,0 +1,13 @@
+{% extends 'words/base.html' %}
+
+{% block content %}
+<div class="list">
+    {% if list.done == false %}
+    <div class="date">
+        {{ list.done|yesno }}
+    </div>
+    {% endif %}
+    <h1>{{ list.title }}</h1>
+    <p>{{ list.text|linebreaksbr }}</p>
+</div>
+{% endblock %}
